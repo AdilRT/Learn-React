@@ -87,7 +87,6 @@ const Login = (props) => {
   };
 
   const validateEmailHandler = () => {
-    debugger;
     //Problem: updating a State based on other states
     // setEmailIsValid(emailState.value.includes('@'));
     dispatchEmail({ type: "INPUT_BLUR" });
