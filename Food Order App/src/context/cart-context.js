@@ -10,7 +10,7 @@ const CartContext = React.createContext({
 const cartReducer = (prevState, action) => {
   if (action.type === "ADD_CART_ITEM") {
     const updatedItems = prevState.items.concat(action.item);
-    const updatedTotalAmount = prevState.totalAmount + action.item.price * action.item.amout;
+    const updatedTotalAmount = prevState.totalAmount + action.item.price * action.item.amount;
     
     return {
       items: updatedItems,
@@ -44,8 +44,8 @@ export const CartProvider = (props) => {
   };
 
   const cartContext = {
-    items: [],
-    totalAmount: 0,
+    items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
